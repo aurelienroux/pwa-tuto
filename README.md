@@ -18,3 +18,7 @@ web.dev PWA [docs](https://web.dev/progressive-web-apps/)
 - [manifest options and properties](https://web.dev/add-manifest/)
 - [adaptative icons](https://web.dev/maskable-icon/)
 - [how to debug a PWA](https://developers.google.com/web/tools/chrome-devtools/progressive-web-apps)
+
+#### iOs support
+
+ios support [options](https://medium.com/appscope/designing-native-like-progressive-web-apps-for-ios-1b3cdda1d0e8)
