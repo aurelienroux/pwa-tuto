@@ -11,6 +11,7 @@ const assets = [
   "/css/styles.css",
   "/img/dish.png",
   "https://fonts.googleapis.com/icon?family=Material+Icons",
+  "https://fonts.gstatic.com/s/materialicons/v52/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2",
 ];
 
 // install service worker
@@ -31,4 +32,9 @@ self.addEventListener('activate', evt => {
 // fetch event
 self.addEventListener('fetch', evt => {
   // console.log('fetch event', evt)
+  evt.respondWith(
+    caches.match(evt.request).then(cacheRes => {
+      return cacheRes || fetch(evt.request)
+    })
+  )
 })
