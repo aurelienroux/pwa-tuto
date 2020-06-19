@@ -33,3 +33,9 @@ PWA must be installed on a https protocol that can be simulated from `localhost`
 To emulate `localhost` on a Android Studio Virtual device, go in `chrome://inspect/#devices` in Chrome. In devices, enable port forwarding and add a `5500 localhost:5500` port forward.
 
 Next, in Android Emulator, replace the url with `localhost:5500`. Https protocol is now accessible and the app can be auto-installed.
+
+#### caching strategies
+
+On fetch event, if the request is made on html page and fails, serves the fallback.html placeholder. Could also serve a placeholder image for every request that contains .png extension
+
+Google dev [caching strategies guide](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/)

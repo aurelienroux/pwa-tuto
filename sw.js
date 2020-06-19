@@ -30,7 +30,7 @@ self.addEventListener('activate', evt => {
   caches.keys().then(keys => {
     return Promise.all(keys
       .filter(key => key !== staticCacheName && key !== dynamicCacheName)
-    .map(key => caches.delete(key))
+      .map(key => caches.delete(key))
     )
   })
 })
@@ -46,6 +46,10 @@ self.addEventListener('fetch', evt => {
           return fetchRes;
         })
       })
-    }).catch(() => caches.match('/pages/fallback.html'))
+    }).catch(() => { 
+      if (evt.request.url.indexOf('.html') > -1) {
+        caches.match('/pages/fallback.html')
+      }
+    })
   )
 })
